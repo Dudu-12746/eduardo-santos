@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<style>
+        html,
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .linha {
+            padding-top: 10px;
+            display: flex;
+        }
+
+        img {
+            height: 300px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<p class="typewriter">Dentro do hospital, o cheiro de álcool e limpeza era forte. Uma enfermeira de sorriso acolhedor se aproximou:</p>
+<p class="typewriter">Oi, tudo bem? Você sabia que uma bolsa de sangue pode salvar até quatro vidas?”</p>
+<p class="typewriter">Ana respirou fundo. Aquilo parecia importante.
+
+</p>
+
+<script>
+function typeWriter(elemento, texto, delay = 50) {
+  let i = 0;
+  function escrever() {
+    if (i < texto.length) {
+      elemento.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escrever, delay);
+    }
+  }
+  escrever();
+}
+
+window.onload = function() {
+  const paragrafos = document.querySelectorAll(".typewriter");
+  
+  let delayTotal = 0;
+  paragrafos.forEach(p => {
+    const textoOriginal = p.textContent;
+    p.textContent = ""; // limpa o texto
+    setTimeout(() => typeWriter(p, textoOriginal), delayTotal);
+    delayTotal += textoOriginal.length * 50 + 500; // espera terminar o anterior
+  });
+};
+</script>
+
+     
+
+    
+
+    <img id="imagem" src="recepcao .png">
+    <br>
+     <div class="botoes">
+        <button onclick="window.location.href='parte3.html'">Fazer a triagem e doar.</button>
+
+        <button onclick="window.location.href='parte4.html'">Sentir medo da agulha e desistir.</button>
+    </div>
+    
+    <br>
+
+    <input type="button" value="Voltar" onclick="history.back()">
+</body>
+
+</html>
+
+

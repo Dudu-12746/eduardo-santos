@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .linha {
+            padding-top: 10px;
+            display: flex;
+        }
+
+        img {
+            height: 300px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <p class="typewriter">Ana olhou para a agulha e sentiu um arrepio. O medo foi maior. Ela agradeceu e saiu do hospital, tentando se convencer de que “não era a hora”. Horas depois, recebeu uma mensagem:
+
+</p>
+<p class="typewriter">“Seu amigo sofreu um acidente e precisa de sangue urgente.”</p>
+<p class="typewriter">Ana gelou.
+
+</p>
+
+<script>
+function typeWriter(elemento, texto, delay = 50) {
+  let i = 0;
+  function escrever() {
+    if (i < texto.length) {
+      elemento.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escrever, delay);
+    }
+  }
+  escrever();
+}
+
+window.onload = function() {
+  const paragrafos = document.querySelectorAll(".typewriter");
+  
+  let delayTotal = 0;
+  paragrafos.forEach(p => {
+    const textoOriginal = p.textContent;
+    p.textContent = ""; // limpa o texto
+    setTimeout(() => typeWriter(p, textoOriginal), delayTotal);
+    delayTotal += textoOriginal.length * 50 + 500; // espera terminar o anterior
+  });
+};
+</script>
+
+
+    <img id="imagem" src="medo.png">
+    <br>
+    <input type="button" value="Voltar" onclick="history.back()">
+
+
+</html>

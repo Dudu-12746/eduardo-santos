@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+    </script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .linha {
+            padding-top: 10px;
+            display: flex;
+        }
+
+        img {
+            height: 300px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <h1> "O Dia da Doação" 🩸 </h1>
+<p class="typewriter">Ana caminhava pela rua numa tarde ensolarada.O vento suave acariciava seus cabelos, quando seus olhos se fixaram em um cartaz vermelho na parede do hospital:</p>
+<p class="typewriter">Ela parou por um momento. Seu coração bateu mais forte.</p>
+<p class="typewriter">Uma dúvida veio: “Será que eu consigo?”</p>
+
+<script>
+function typeWriter(elemento, texto, delay = 50) {
+  let i = 0;
+  function escrever() {
+    if (i < texto.length) {
+      elemento.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(escrever, delay);
+    }
+  }
+  escrever();
+}
+
+window.onload = function() {
+  const paragrafos = document.querySelectorAll(".typewriter");
+  
+  let delayTotal = 0;
+  paragrafos.forEach(p => {
+    const textoOriginal = p.textContent;
+    p.textContent = ""; // limpa o texto
+    setTimeout(() => typeWriter(p, textoOriginal), delayTotal);
+    delayTotal += textoOriginal.length * 50 + 500; // espera terminar o anterior
+  });
+};
+</script>
+
+    <div class="historia"></div>
+    
+
+    <img id="imagem" src="inicio.png">
+    <br>
+
+    </div>
+    <div class="botoes">
+        <button onclick="window.location.href='parte2.html'">
+  <i class="fa-solid fa-hospital"></i> 
+  Entrar no hospital
+</button>
+
+<button onclick="window.location.href='parte8.html'">
+  <i class="fa-solid fa-arrow-right"></i> 
+  Ignorar e seguir
+</button>
+    </div>
+</body>
+
+</html>
